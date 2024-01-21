@@ -68,3 +68,7 @@ Possible bonus ideas:
 * Update for comments
 * Aggregate rating for a place
 * Auto-complete state dropdown
+
+## Sources
+Images:
+- error404.png: created using Canva
