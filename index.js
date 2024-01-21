@@ -3,6 +3,9 @@ require(`dotenv`).config()
 const express = require('express')
 const app = express()
 
+//use the places.js file to create all places pages
+app.use(`/places`, require(`./controllers/places`))
+
 //homepage
 app.get('/', (req, res) => {
     res.send('Hello world!')
