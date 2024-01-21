@@ -9,7 +9,7 @@ const app = express()
 // require jsx for the view engine
 app.set(`view engine`, `jsx`)
 app.engine(`jsx`, require(`express-react-views`).createEngine())
-// MIDDLEWARE
+// uses a public folder to have items/files that are used by all
 app.use(express.static('public'))
 
 // ROUTES
