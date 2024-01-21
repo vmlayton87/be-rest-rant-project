@@ -9,6 +9,8 @@ const app = express()
 // require jsx for the view engine
 app.set(`view engine`, `jsx`)
 app.engine(`jsx`, require(`express-react-views`).createEngine())
+// MIDDLEWARE
+app.use(express.static('public'))
 
 // ROUTES
 
