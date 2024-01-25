@@ -17,7 +17,27 @@ router.get(`/`, (req, res)=>{
 
     res.render(`places/index`, {places})
 })
+
+//GET places/new to show the form for adding another place
+router.get(`/new`, (req, res)=> {
+  res.render(`places/new`)
+})
+
+// GET places/:id
+
 module.exports = router
+
+
+
+
+
+
+
+
+
+
+
+
 
 // const router = require(`express`).Router()
 // // const places = require(`../models/place_list.js`)
