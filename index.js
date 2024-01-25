@@ -15,7 +15,7 @@ app.use(express.static('public'))
 // ROUTES
 
 //use the places.js file to create all places pages
-app.use(`/places`, require(`./controllers/places`))
+app.use(`/places`, require(`./controllers/places_controller`))
 
 //homepage
 app.get('/', (req, res) => {
