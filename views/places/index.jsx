@@ -27,7 +27,7 @@ function Index (data) {
           <main>
               <h1>Places to Rant or Rave About</h1>
               <div className="container text-center">
-                <div className="row justify-content-center g-2" data-masonry='{"percentPosition": true }'>
+                <div className="row justify-content-center g-2">
                 {placesFormatted}
               </div>
               </div>

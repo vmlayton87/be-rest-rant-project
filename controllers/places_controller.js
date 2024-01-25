@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
   if (!req.body.city) {
     req.body.city = 'Anytown'
   }
-  if (!req.body.state) {
+  if (req.body.state === "Choose a state") {
     req.body.state = 'USA'
   }
   places.push(req.body)
