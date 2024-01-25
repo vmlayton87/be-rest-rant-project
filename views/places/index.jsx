@@ -6,10 +6,12 @@ function Index (data) {
       return (
         <div className="col-12 col-sm-4 col-lg-3">
         <div className="card" >
-          <div className="ratio ratio-4x3"><img src={place.pic} alt={place.name} className="card-img-top"></img></div>
+          <div className="ratio ratio-4x3 ">
+            <img src={place.pic} alt={place.name} className="card-img-top object-fit-cover"></img></div>
         <div className="card-body">
           <h5 className="card-title">{place.name}</h5>
-          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p className="card-text">{place.cuisines}</p>
+          <p className="card-text">Located in {place.city}, {place.state}</p>
           <a href="#" className="btn btn-primary">Go somewhere</a>
         </div>
         </div>
