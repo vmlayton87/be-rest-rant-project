@@ -1,7 +1,7 @@
 const router = require(`express`).Router()
 const places = require(`../models/place_list.js`)
 
-// places index
+// Index page listing all places
 router.get(`/`, (req, res)=>{
   res.render(`places/index`, {places})
 })

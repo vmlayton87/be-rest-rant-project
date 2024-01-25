@@ -1,3 +1,5 @@
+// Index page listing all places
+
 const React = require('react')
 const Default = require('../default')
 

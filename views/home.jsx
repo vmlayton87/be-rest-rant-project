@@ -1,3 +1,5 @@
+// The home page
+
 const React = require('react')
 const Default = require('./default')
 

@@ -14,10 +14,10 @@ app.use(express.static('public'))
 
 // ROUTES
 
-//use the places.js file to create all places pages
+//use the places_controller.js file to create all places pages
 app.use(`/places`, require(`./controllers/places_controller`))
 
-//homepage
+// The home page
 app.get('/', (req, res) => {
     res.render('home')
 })

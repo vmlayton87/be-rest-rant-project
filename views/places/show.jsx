@@ -1,3 +1,5 @@
+// Show one place in detail (Associated rants, new rant form, delete rant button)
+
 const React = require(`react`)
 const Default = require('../default')
 
