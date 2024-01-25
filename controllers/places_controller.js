@@ -7,7 +7,9 @@ router.get(`/`, (req, res)=>{
 })
 
 //New place
-router.get(`/new`, (req, res)=>{})
+router.get(`/new`, (req, res)=>{
+  res.render(`places/new`)
+})
 
 //Show individual place
 router.get('/:id', (req, res) => {
