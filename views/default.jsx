@@ -12,6 +12,21 @@ function Default (html) {
             <link rel="stylesheet" href="/style.css"/>
         </head>
         <body>
+            <nav className="navbar fixed-top bg-body-tertiary">
+                <div className="container-fluid">
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/places">Places</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/places/new">Add Place</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
             {html.children}
         </body>
         </html>

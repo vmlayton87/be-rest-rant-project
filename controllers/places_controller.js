@@ -12,8 +12,11 @@ router.get(`/new`, (req, res)=> {
 })
 
 // GET places/:id
+router.get(`/show`, (req, res)=>{
+  res.render(`places/show`)
+})
 
-//POST /places uses the new form
+//POST /places uses the new form to CREATE a new place card/object
 router.post('/', (req, res) => {
   console.log(req.body)
   if (!req.body.pic) {
