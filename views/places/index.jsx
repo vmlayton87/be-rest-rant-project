@@ -12,7 +12,7 @@ function Index (data) {
             <img src={place.pic} alt={place.name} className="card-img-top object-fit-cover"></img></div>
         <div className="card-body">
           <h5 className="card-title">{place.name}</h5>
-          <p className="card-text">{place.cuisines}</p>
+          <p className="card-text">{place.cuisine}</p>
           <p className="card-text">Located in {place.city}, {place.state}</p>
           <a href="#" className="btn btn-primary">Go somewhere</a>
         </div>
