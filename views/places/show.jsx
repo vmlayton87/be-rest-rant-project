@@ -7,7 +7,7 @@ function Show () {
     return (
     <Default>
         <main>
-            <h1>Add a New Place</h1>
+            <h1>look at all the info</h1>
         </main>
     </Default>
 ) }
