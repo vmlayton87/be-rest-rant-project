@@ -25,6 +25,11 @@ router.get(`/new`, (req, res)=> {
 
 // GET places/:id
 
+//POST new form
+router.post( `/`, (req, res)=>{
+  res.send("hello. Post is working.")
+})
+
 module.exports = router
 
 
