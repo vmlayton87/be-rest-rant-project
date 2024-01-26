@@ -14,7 +14,7 @@ function Show (data) {
                 <input type="submit" className="btn btn-danger" value="DELETE"/>
             </form>
         </div>
-        <div class="clearfix">
+        <div className="clearfix">
             <img src={data.place.pic} class="col-md-6 float-md-start mb-3 ms-md-3" alt={`a photo of ${data.place.name}`}/>
 
             
