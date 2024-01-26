@@ -15,7 +15,7 @@ function Show (data) {
             </form>
         </div>
         <div className="clearfix">
-            <img src={data.place.pic} class="col-md-6 float-md-start mb-3 ms-md-3" alt={`a photo of ${data.place.name}`}/>
+            <img src={data.place.pic} className="col-md-6 float-md-start mb-3 ms-md-3" alt={`a photo of ${data.place.name}`}/>
 
             
             

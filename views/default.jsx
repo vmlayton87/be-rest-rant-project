@@ -14,15 +14,15 @@ function Default (html) {
         <body>
             <nav className="navbar sticky-top bg-body-tertiary">
                 <div className="container-fluid">
-                    <ul class="nav justify-content-center">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <ul className="nav justify-content-center">
+                        <li className="nav-item">
+                            <a className="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/places">Places</a>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/places">Places</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/places/new">Add Place</a>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/places/new">Add Place</a>
                         </li>
                     </ul>
                 </div>
