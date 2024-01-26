@@ -12,7 +12,7 @@ function Default (html) {
             <link rel="stylesheet" href="/style.css"/>
         </head>
         <body>
-            <nav className="navbar fixed-top bg-body-tertiary">
+            <nav className="navbar sticky-top bg-body-tertiary">
                 <div className="container-fluid">
                     <ul class="nav justify-content-center">
                         <li class="nav-item">
