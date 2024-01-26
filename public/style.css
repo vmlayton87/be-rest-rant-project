@@ -1,13 +1,15 @@
 body {
     margin: 1em auto;
     text-align: center;
+    background-color: lightblue;
     
 }
 
 main {
     margin-right: 20px;
     margin-left: 20px;
-    
+    background-color: white;
+    padding: 1em;
 }
 
 h1 {
@@ -17,7 +19,7 @@ h1 {
 
 .largeImage {
     max-width: 75vw;
-    max-height: 75vh;
+    max-height: 60vh;
 }
 .edit-and-delete-buttons {
     display: flex;

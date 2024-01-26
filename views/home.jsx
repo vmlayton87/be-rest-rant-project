@@ -15,7 +15,7 @@ function home () {
   
                 </cite>
                 
-                <a href="/places" className="d-grid gap-2 col-6 mx-auto">
+                <a href="/places" className="d-grid gap-2 col-4 mx-auto">
                     <button className=" btn btn-primary">Places Page</button>
                 </a>
 

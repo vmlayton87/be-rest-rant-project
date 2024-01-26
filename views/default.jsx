@@ -13,8 +13,8 @@ function Default (html) {
         </head>
         <body>
             <nav className="navbar sticky-top bg-body-tertiary">
-                <div className="container-fluid">
-                    <ul className="nav justify-content-center">
+                <div className="container-fluid text-center d-flex justify-content-center">
+                    <ul className="nav ">
                         <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="/">Home</a>
                         </li>

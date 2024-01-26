@@ -6,7 +6,7 @@ function edit_form ({place, index}) {
     return (
         <Default>
             <main className="justify-content-center m-2">
-                <h1>Add a New Place</h1>
+                <h1>Edit {place.name}</h1>
                 <form action={`/places/${index}?_method=PUT`} method="POST" >
                     <div className="form-floating mb-3">
                         <input className="form-control"

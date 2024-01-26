@@ -6,6 +6,7 @@ const Default = require('../default')
 function Index (data) {
     let placesFormatted = data.places.map((place, index) => {
       return (
+        
         <div className="col-12 col-sm-4 col-lg-3">
         <div className="card" >
           <div className="ratio ratio-4x3 ">
@@ -18,6 +19,7 @@ function Index (data) {
         </div>
         </div>
         </div>
+        
       )
     })
     
