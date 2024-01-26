@@ -7,10 +7,18 @@ function Show (data) {
     return (
     <Default>
         <main>
+        <h1>{data.place.name}</h1>
+        <div className="edit-and-delete-buttons">
+            <a href={`/places/${data.id}/edit`} className="btn btn-warning">Edit</a>
+            <form action={`/places/${data.id}?_method=DELETE`} method="POST">
+                <input type="submit" className="btn btn-danger" value="DELETE"/>
+            </form>
+        </div>
         <div class="clearfix">
             <img src={data.place.pic} class="col-md-6 float-md-start mb-3 ms-md-3" alt={`a photo of ${data.place.name}`}/>
 
-            <h1>{data.place.name}</h1>
+            
+            
             <div>
                 <h2>Rating</h2>
                     <p>
@@ -30,21 +38,7 @@ function Show (data) {
                     </p>
             </div>
         </div>
-            {/* <div className="card mb-3" style={{maxwidth: 540 +"px"}}>
-                <div className="row g-0">
-                    <div className="col-md-4">
-                        <img src={data.place.pic} class="img-fluid rounded-start" alt={`photo of ${data.place.name}`} />
-                    </div>
-                    <div className="col-md-8">
-                        <div className="card-body">
-                            <h1 className="card-title">{data.place.name}</h1>
-                            
-                            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
+        
         </main>
     </Default>
 ) }

@@ -4,6 +4,7 @@ const express = require('express')
 //CONFIGURATION
 require(`dotenv`).config()
 const app = express()
+const methodOverride = require(`method-override`)
 
 // MIDDLEWARE
 // require jsx for the view engine
@@ -12,6 +13,7 @@ app.engine(`jsx`, require(`express-react-views`).createEngine())
 // uses a public folder to have items/files that are used by all
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
+app.use(methodOverride(`_method`))
 
 // ROUTES
 
