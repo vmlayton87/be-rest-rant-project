@@ -7,12 +7,12 @@ function Index (data) {
     let placesFormatted = data.places.map((place, index) => {
       return (
         
-        <div className="col-12 col-sm-4 col-lg-3">
+        <div className="col-12 col-sm-4 col-lg-3" key={place.name}>
         <div className="card" >
           <div className="ratio ratio-4x3 ">
             <img src={place.pic} alt={place.name} className="card-img-top object-fit-cover"></img></div>
         <div className="card-body">
-          <h5 className="card-title"><a href={`places/${index}`}>{place.name}</a></h5>
+          <h5 className="card-title">{place.name}</h5>
           <p className="card-text">{place.cuisine}</p>
           <p className="card-text">Located in {place.city}, {place.state}</p>
           <a href={`places/${index}`} className="btn btn-primary">More Info</a>
@@ -24,7 +24,7 @@ function Index (data) {
     })
     
     return (
-      <Default>
+      <Default title="Places">
           <main>
               <h1>Places to Rant or Rave About</h1>
               <div className="container text-center">

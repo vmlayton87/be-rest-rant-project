@@ -3,7 +3,7 @@ const Default = require('../default')
 
 function new_form () {
     return (
-        <Default>
+        <Default title="Add New Place">
             <main className="justify-content-center m-2">
                 <h1>Add a New Place</h1>
                 <form method="POST" action="/places">

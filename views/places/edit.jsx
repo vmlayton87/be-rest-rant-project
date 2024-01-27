@@ -4,7 +4,7 @@ const Default = require('../default.jsx')
 
 function edit_form ({place, index}) {
     return (
-        <Default>
+        <Default title={`Edit ${place.name}`}>
             <main className="justify-content-center m-2">
                 <h1>Edit {place.name}</h1>
                 <form action={`/places/${index}?_method=PUT`} method="POST" >

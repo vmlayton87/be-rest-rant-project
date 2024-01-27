@@ -5,7 +5,7 @@ const Default = require('./default')
 function error404 () {
     
     return (
-        <Default>
+        <Default title="Page not found">
             <main>
                 <h1>404: PAGE NOT FOUND</h1>
                 <p>The page you are looking for doesn't exist.</p>    

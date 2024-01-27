@@ -12,6 +12,32 @@ main {
     padding: 1em;
 }
 
+nav {
+    background-color: cornflowerblue;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 25px;
+}
+
+nav a {
+    color: white;
+    font-size: larger;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: pink;
+    text-decoration: none;
+}
+
 h1 {
     text-align: center;
     color: cornflowerblue;
@@ -24,4 +50,8 @@ h1 {
 .edit-and-delete-buttons {
     display: flex;
     justify-content: center;
+}
+
+.btn:hover {
+    color: pink;
 }
