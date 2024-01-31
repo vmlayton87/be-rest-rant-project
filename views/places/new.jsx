@@ -102,6 +102,13 @@ function new_form () {
                         <label htmlFor="pic">Place Image URL</label>
                     </div>
 
+                    <div className="form-floating mb-3">
+                        <input className="form-control"
+                            id="founded"
+                            name="founded"/>
+                        <label htmlFor="founded">Founded Year</label>
+                    </div>
+
                     <input className="btn btn-primary" type="submit" value="Add New Place"/>
                 </form>
             </main>
