@@ -3,9 +3,9 @@ const mongoose = require(`mongoose`)
 const placeSchema = new mongoose.Schema({
   name: {type: String, required:true}, 
   city: {type:String, default:'Anytown'},
-  state: {type:String, default: "USA"},
+  state: {type:String, default: `USA`},
   cuisine: {type: String, required:true},
-  pic: {type: String, default: "https://placekitten.com/300/200"}, 
+  pic: {type: String, default: `https://placekitten.com/300/200`}, 
   founded: Number
 })
 

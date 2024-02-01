@@ -1,12 +1,14 @@
 const React = require(`react`)
 const Default = require('../default')
 
+
 function new_form () {
+   
     return (
         <Default title="Add New Place">
             <main className="justify-content-center m-2">
                 <h1>Add a New Place</h1>
-                <form method="POST" action="/places">
+                <form method="POST" action="/places" >
 
                     <div className="form-floating mb-3">
                         <input className="form-control"

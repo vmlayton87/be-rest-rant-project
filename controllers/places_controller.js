@@ -19,6 +19,15 @@ router.get('/', (req, res) => {
 // creates a new restaurant redirect uses url path
 router.post('/', (req, res) => {
   console.log(req.body)
+  
+    Object.keys(req.body).forEach(key => req.body[key] = req.body[key] === '' ? undefined : req.body[key])
+
+  if (req.body.state == "Choose a state") {
+    req.body.state = undefined
+  }
+
+  console.log(req.body)
+  
   db.Place.create(req.body)
   .then(()=>{
     res.redirect(`/places`)
@@ -28,6 +37,12 @@ router.post('/', (req, res) => {
     res.render(`error404`)
   })
 })
+// name: {type: String, required:true}, 
+//   city: {type:String, default:'Anytown'},
+//   state: {type:String, default: `USA`},
+//   cuisine: {type: String, required:true},
+//   pic: {type: String, default: `https://placekitten.com/300/200`}, 
+//   founded: Number
 
 router.get('/new', (req, res) => {
   res.render('places/new')
