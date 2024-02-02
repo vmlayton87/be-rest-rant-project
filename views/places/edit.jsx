@@ -107,6 +107,13 @@ function edit_form ({place, index}) {
                         <label htmlFor="pic">Place Image URL</label>
                     </div>
 
+                    <div className="form-floating mb-3">
+                        <input className="form-control"
+                            id="founded"
+                            name="founded"/>
+                        <label htmlFor="founded">Founded Year</label>
+                    </div>
+
                     <input className="btn btn-primary" type="submit" value={`Edit ${place.name}`}/>
                 </form>
             </main>

@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 // creates a new restaurant redirect uses url path
 router.post('/', (req, res) => {
   console.log(req.body)
-  
+  // this turns an object's keys into an array of the key's and looks to see if the key has a value of an empty string. 
     Object.keys(req.body).forEach(key => req.body[key] = req.body[key] === '' ? undefined : req.body[key])
 
   if (req.body.state == "Choose a state") {
@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
   }
 
   console.log(req.body)
-  
+
   db.Place.create(req.body)
   .then(()=>{
     res.redirect(`/places`)
