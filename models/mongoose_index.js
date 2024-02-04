@@ -5,3 +5,4 @@ mongoose.connect(process.env.MONGO_URI).then(console.log('connected to mongo: ',
 
 // making a one-stop shop for our connection instead of doing a const require then an exports
 module.exports.Place = require(`./place_list`)
+module.exports.Comment = require(`./comments`)
