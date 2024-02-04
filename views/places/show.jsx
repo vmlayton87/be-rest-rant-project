@@ -20,7 +20,7 @@ function Show (data) {
             <div>
                 <h2>Description</h2>
                     <p>
-                        Located in {data.place.city}, {data.place.state} and serving {data.place.cuisine}.
+                        Founded in {data.place.founded}, {data.place.name} is located in {data.place.city}, {data.place.state} and serving {data.place.cuisine}.
                     </p>
             </div>
             <div className="edit-and-delete-buttons">

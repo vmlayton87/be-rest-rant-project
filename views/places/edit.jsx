@@ -110,7 +110,8 @@ function edit_form ({place, index}) {
                     <div className="form-floating mb-3">
                         <input className="form-control"
                             id="founded"
-                            name="founded"/>
+                            name="founded"
+                            defaultValue={place.founded}/>
                         <label htmlFor="founded">Founded Year</label>
                     </div>
 
