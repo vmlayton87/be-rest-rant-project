@@ -6,8 +6,17 @@ const placeSchema = new mongoose.Schema({
   state: {type:String, default: `USA`},
   cuisine: {type: String, required:true},
   pic: {type: String, default: `https://placekitten.com/300/200`}, 
-  founded: Number
+  founded: {
+    type: Number, 
+    min:[1673, `Wait, how old is this place?`],
+    max:[new Date().getFullYear(), `Can I borrow your time machine?`]
+  }
 })
+
+placeSchema.methods.showEstablished = function() {
+  return `${this.name} has been serving ${this.city}, ${this.state} since ${this.founded}.`
+}
+
 
 module.exports = mongoose.model(`Place`, placeSchema)
 

@@ -107,7 +107,9 @@ function new_form () {
                     <div className="form-floating mb-3">
                         <input className="form-control"
                             id="founded"
-                            name="founded"/>
+                            name="founded"
+                            type="number"
+                            default={new Date().getFullYear()} />
                         <label htmlFor="founded">Founded Year</label>
                     </div>
 
