@@ -4,6 +4,25 @@ const React = require(`react`)
 const Default = require('../default')
 
 function Show (data) {
+    let comments = (
+        <h3 className = "inactive">No comments yet!</h3>
+    )
+    
+    if (data.place.comments.length) {
+        comments = data.place.comments.map(c => {
+        return (
+            <div key={c.id} className="border">
+            <h4 className="rant">{c.rant ? 'Rant! 😡' : 'Rave! 🤩'}</h4>
+            <p>{c.content}</p>
+            <p>
+                - {c.author}
+            </p>
+            <h4>Rating: {c.stars}</h4>
+            </div>
+        )
+        })
+    }
+           
     return (
     <Default title={`${data.place.name} Info`}>
         <main>
@@ -32,9 +51,7 @@ function Show (data) {
                 </div>
                 <div className="col-12">
                     <h2>Comments</h2>
-                        <p>
-                            No comments yet
-                        </p>
+                        {comments}
                 </div>
             </div>
         </div>
