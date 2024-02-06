@@ -17,7 +17,7 @@ async function seed() {
         author: 'Still Hungry',
         rant: true,
         stars: 2.0,
-        content: 'Not enough food, small portions. D NOT recommend!'
+        content: 'Not enough food, small portions. DO NOT recommend!'
     })
 
     // Add that comment to the place's comment array.

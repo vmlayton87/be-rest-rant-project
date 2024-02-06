@@ -1,12 +1,12 @@
 const React = require(`react`)
 const Default = require('../default')
 
-function new_comment () {
+function new_comment (data) {
     return (
         <Default title = "New Comment">
              <main className="m-2">
                 <h1 className="justify-content-center">Add a Comment</h1>
-                <form method="POST" action="/places/show" >
+                <form method="POST" action={`/places/${data.place.id}`}>
                     <div className="form-floating mb-3">
                         <input className="form-control"
                             id="author"

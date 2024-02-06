@@ -3,6 +3,8 @@ const db = require('../models/mongoose_index')
 // isn't working with just models folder unless folder is index.js
 // will work with specified folder, but won't load defaults from schema: because the form is collecting an empty string, not nothing.
 
+// GET ROUTES
+
 // get /places/index: shows a list of all restaurants render uses file path
 router.get('/', (req, res) => {
   db.Place.find()
@@ -11,12 +13,48 @@ router.get('/', (req, res) => {
   })
   .catch( err => {
     console.log(err)
-    res.render(`error404`)
   })
   
 })
 
-// creates a new restaurant redirect uses url path
+// get /places/new: gets the add new places form
+router.get('/new', (req, res) => {
+  res.render('places/new')
+})
+
+// get /places/:id : gets the show.jsx. this shows more detail for a specific place
+router.get('/:id', (req, res) => {
+  db.Place.findById(req.params.id)
+  .populate(`comments`)
+  .then((place)=>{
+    res.render(`places/show`, {place})
+  })
+  .catch( err => {
+    console.log(err)
+  })
+})
+
+// get /places/:id/rant: this gets the add a new comment form
+router.get('/:id/comment', (req, res) => {
+  db.Place.findById(req.params.id)
+  .populate(`comments`)
+  .then((place)=>{
+    res.render('places/new-comment', {place})
+  })
+  .catch( err => {
+    console.log(err)
+  })
+})
+
+
+// get /places/:id/edit: this gets the edit a place's info form
+router.get('/:id/edit', (req, res) => {
+  res.send('GET edit form stub')
+})
+
+// POST ROUTES
+
+// posts a new restaurant's info on the index page. creates a new restaurant redirect uses url path
 router.post('/', (req, res) => {
   console.log(req.body)
   // this turns an object's keys into an array of the key's and looks to see if the key has a value of an empty string. 
@@ -34,49 +72,38 @@ router.post('/', (req, res) => {
   })
   .catch( err => {
     console.log(err)
-    res.render(`error404`)
-  })
-})
-// name: {type: String, required:true}, 
-//   city: {type:String, default:'Anytown'},
-//   state: {type:String, default: `USA`},
-//   cuisine: {type: String, required:true},
-//   pic: {type: String, default: `https://placekitten.com/300/200`}, 
-//   founded: Number
-
-router.get('/new', (req, res) => {
-  res.render('places/new')
-})
-
-router.get('/:id', (req, res) => {
-  db.Place.findById(req.params.id)
-  .populate(`comments`)
-  .then((place)=>{
-    res.render(`places/show`, {place})
-  })
-  .catch( err => {
-    console.log(err)
-    res.render(`error404`)
   })
 })
 
-
-router.put('/:id', (req, res) => {
-  res.send('PUT /places/:id stub')
+// posts a new comment on the more info page
+router.post('/:id', (req, res) => {
+  req.body.rant = req.body.rant ? true : false //creates a true or false value for the rant key
+  console.log(req.body) 
+  db.Place.findById(req.params.id) // looks up the place by the id in the url
+  .then(place=>{
+    db.Comment.create(req.body) // then creates a comment with an id 
+    .then(comment=>{
+      place.comments.push(comment.id) // adds a new comment to the comments array in the places schema
+      place.save() // saves new info
+      .then(()=>{res.redirect(`/places/${req.params.id}`)}) // redirects to the more info page after a new comment has been added
+      .catch(err=> {console.log( `error at line 80: `, err)})
+    })
+    .catch(err=> {console.log(`error at line 77: `,err)})
+  }) 
+  .catch(err=> {console.log(`error at line 75: `, err)})
+  
 })
 
+// PUT ROUTES
+
+//DELETE ROUTES
+
+// 
 router.delete('/:id', (req, res) => {
   res.send('DELETE /places/:id stub')
 })
 
-router.get('/:id/edit', (req, res) => {
-  res.send('GET edit form stub')
-})
-
-router.get('/:id/rant', (req, res) => {
-  res.render('places/new-comment')
-})
-
+// 
 router.delete('/:id/rant/:rantId', (req, res) => {
     res.send('GET /places/:id/rant/:rantId stub')
 })
