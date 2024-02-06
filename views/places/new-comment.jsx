@@ -20,12 +20,14 @@ function new_comment (data) {
                         <input className="form-control"
                             id="stars"
                             name="stars"
-                            type="number"
+                            type="range"
                             step="0.5"
                             min="1"
-                            max="5" 
+                            max="5"
                             required
                             placeholder="Rating"/>
+                            {/* need to use tooltip to display the current value on the slider */}
+                            
                         <label htmlFor="stars">Rating</label>
                     </div>
 

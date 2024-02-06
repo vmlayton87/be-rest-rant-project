@@ -56,7 +56,33 @@ h1 {
     color: pink;
 }
 
+/* Makes the label for the checkbox to go back to the left of the window instead of being centered by the body */
 .checkbox-label {
     text-align: start !important;
     margin-left: 10px;
 }
+
+/* Used to show the value of the slider on top of the slider */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
