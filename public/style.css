@@ -55,3 +55,8 @@ h1 {
 .btn:hover {
     color: pink;
 }
+
+.checkbox-label {
+    text-align: start !important;
+    margin-left: 10px;
+}

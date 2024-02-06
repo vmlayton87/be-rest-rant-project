@@ -60,6 +60,7 @@ router.get('/:id', (req, res) => {
   })
 })
 
+
 router.put('/:id', (req, res) => {
   res.send('PUT /places/:id stub')
 })
@@ -72,8 +73,8 @@ router.get('/:id/edit', (req, res) => {
   res.send('GET edit form stub')
 })
 
-router.post('/:id/rant', (req, res) => {
-  res.send('GET /places/:id/rant stub')
+router.get('/:id/rant', (req, res) => {
+  res.render('places/new-comment')
 })
 
 router.delete('/:id/rant/:rantId', (req, res) => {
