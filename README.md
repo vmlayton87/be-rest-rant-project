@@ -77,6 +77,7 @@ Images:
 - chris-liverani-oCsaxvGCehM-unsplash.jpg: Photo by <a href="https://unsplash.com/@chrisliverani?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Chris Liverani</a> on <a href="https://unsplash.com/photos/formal-dinner-setup-oCsaxvGCehM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 - paul-rogers-FlYgsQGoxhA-unsplash.jpg: Photo by <a href="https://unsplash.com/@progers?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Paul Rogers</a> on <a href="https://unsplash.com/photos/black-ceramic-bowl-with-rice-and-sliced-lemon-FlYgsQGoxhA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 - nathan-dumlao-z3em1GBRhvY-unsplash.jpg: Photo by <a href="https://unsplash.com/@nate_dumlao?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Nathan Dumlao</a> on <a href="https://unsplash.com/photos/coffee-surrounded-by-four-baked-breads-z3em1GBRhvY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+- circle24.png: <a href="https://www.flaticon.com/free-icons/rubbish" title="rubbish icons">Rubbish icons created by hqrloveq - Flaticon</a>
   
   
   

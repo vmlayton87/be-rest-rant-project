@@ -5,7 +5,8 @@ const db = require('../models/mongoose_index')
 
 // GET ROUTES
 
-// get /places/index: shows a list of all restaurants render uses file path
+// shows a list of all restaurants render uses file path
+// url: /places; file path: /places/index.jsx
 router.get('/', (req, res) => {
   db.Place.find()
   .then((places)=> {
@@ -17,12 +18,14 @@ router.get('/', (req, res) => {
   
 })
 
-// get /places/new: gets the add new places form
+// gets the add new places form
+// url: /places/new; file path: /places.new.jsx
 router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
-// get /places/:id : gets the show.jsx. this shows more detail for a specific place
+// this shows more detail for a specific place
+// url: /places/:id; file path: /places/show.jsx
 router.get('/:id', (req, res) => {
   db.Place.findById(req.params.id)
   .populate(`comments`)
@@ -34,7 +37,8 @@ router.get('/:id', (req, res) => {
   })
 })
 
-// get /places/:id/rant: this gets the add a new comment form
+// this gets the add a new comment form
+// url: /places/:id/comment; file path: places/new-comment
 router.get('/:id/comment', (req, res) => {
   db.Place.findById(req.params.id)
   .populate(`comments`)
@@ -47,7 +51,8 @@ router.get('/:id/comment', (req, res) => {
 })
 
 
-// get /places/:id/edit: this gets the edit a place's info form
+// this gets the edit a place's info form
+// url: places/:id/edit; 
 router.get('/:id/edit', (req, res) => {
   db.Place.findById(req.params.id)
   .then(place => {
@@ -85,7 +90,7 @@ router.post('/', (req, res) => {
 // posts a new comment on the more info page
 router.post('/:id', (req, res) => {
   req.body.rant = req.body.rant ? true : false //creates a true or false value for the rant key
-  console.log(req.body) 
+  
   db.Place.findById(req.params.id) // looks up the place by the id in the url
   .then(place=>{
     db.Comment.create(req.body) // then creates a comment with an id 
@@ -102,6 +107,7 @@ router.post('/:id', (req, res) => {
 })
 
 // PUT ROUTES
+// edit a place
 router.put('/:id', (req, res) => {
   db.Place.findByIdAndUpdate(req.params.id, req.body)
   .then(() => {
@@ -128,9 +134,11 @@ router.delete('/:id', (req, res) => {
 })
 
 
-// 
-router.delete('/:id/rant/:rantId', (req, res) => {
-    res.send('GET /places/:id/rant/:rantId stub')
+// delete a comment
+router.delete('/:id/comment/:commentId', (req, res) => {
+  db.Comment.findByIdAndDelete(req.params.commentId)
+  .then(()=>{res.redirect(`/places/${req.params.id}`)})
+    
 })
 
 module.exports = router
