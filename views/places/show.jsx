@@ -5,6 +5,7 @@ const Default = require('../default')
 
 function Show (data) {
     
+    //for showing the comments and rating:
     let comments = (
         <h3 className = "inactive">No comments yet!</h3>
     )
@@ -12,6 +13,38 @@ function Show (data) {
     let rating = (
         <p className="inactive">Not yet rated</p>
     )
+    
+    let deletePlaceModal = (
+        <div>
+        {/* <!-- Button trigger modal --> */}
+        
+        <button type="button" className="btn btn-danger" data-bs-toggle="modal" data-bs-target="#placeStaticBackdrop">
+            Delete
+        </button>
+
+        {/* <!-- Modal --> */}
+        <div className="modal fade" id="placeStaticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="placeStaticBackdropLabel" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content">
+            <div className="modal-header">
+                <h1 className="modal-title fs-5" id="placeStaticBackdropLabel">Delete Place</h1>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div className="modal-body">
+                {`Are you sure you want to delete ${data.place.name}?`}
+            </div>
+            <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <form action={`/places/${data.place.id}?_method=DELETE`} method="POST">
+                                    <input type="submit" className="btn btn-danger" value="CONFIRM DELETE"/>
+                                </form>
+            </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    )
+
     
       
     if (data.place.comments.length) {
@@ -30,6 +63,36 @@ function Show (data) {
         )
 
         comments = data.place.comments.map(c => {
+            let deleteCommentModal = (
+                <div>
+                {/* <!-- Button trigger modal --> */}
+                
+        <button type="button" className="btn position-absolute bottom-0 end-0" data-bs-toggle="modal" data-bs-target="#commentStaticBackdrop">
+        <img src="/images/circle24.png" ></img>
+        </button>
+        
+        {/* <!-- Modal --> */}
+        <div className="modal fade" id="commentStaticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="commentStaticBackdropLabel" aria-hidden="true">
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h1 className="modal-title fs-5" id="commentStaticBackdropLabel">Delete Comment</h1>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div className="modal-body">
+                {`Are you sure you want to delete ${c.author}'s comment?`}
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <form  action={`/places/${data.place.id}/comment/${c.id}?_method=DELETE`} method="POST">
+                    <input type="submit" className="btn btn-danger" value="CONFIRM DELETE"/>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+            )
         return (
             <div key={c.id} className="border col-6 position-relative">
             <h4 className="rant">{c.rant ? 'Rant! 😡' : 'Rave! 🤩'}</h4>
@@ -39,10 +102,8 @@ function Show (data) {
             </p>
             
             <h5>Rating: {c.stars}</h5>
-            <form className="position-absolute bottom-0 end-0" action={`/places/${data.place.id}/comment/${c.id}?_method=DELETE`} method="POST">
-                            <button type="submit" className="btn" value="Delete Comment"><img src="/images/circle24.png" ></img></button>
-                        </form>
             
+            {deleteCommentModal}
             </div>
         )
         })
@@ -67,11 +128,10 @@ function Show (data) {
 
                     <div className="edit-and-delete-buttons">
                         <a href={`/places/${data.place.id}/edit`} className="btn btn-warning me-2">Edit</a>
-                        <form action={`/places/${data.place.id}?_method=DELETE`} method="POST">
-                            <input type="submit" className="btn btn-danger" value="DELETE"/>
-                        </form>
+                      
+                        {deletePlaceModal}
                     </div>
-                    
+
                 </div>
                 <div className="row">
                     <h2>Comments</h2>

@@ -1,9 +1,14 @@
 const router = require('express').Router()
 const db = require('../models/mongoose_index') 
+
 // isn't working with just models folder unless folder is index.js
 // will work with specified folder, but won't load defaults from schema: because the form is collecting an empty string, not nothing.
 
 // GET ROUTES
+
+// seeders
+// to seed: in terminal/gitbash node seeders/seed-places.js
+// then node seeders/seed-comments.js
 
 // shows a list of all restaurants render uses file path
 // url: /places; file path: /places/index.jsx
@@ -17,6 +22,7 @@ router.get('/', (req, res) => {
   })
   
 })
+
 
 // gets the add new places form
 // url: /places/new; file path: /places.new.jsx
