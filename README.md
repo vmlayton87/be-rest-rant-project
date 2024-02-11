@@ -6,6 +6,8 @@ REST-Rant is an app where users can review restaurants.
 
 **CSS Framework:** Bootstrap
 
+**Javascript Framework:** Bootstrap
+
 **Stack:** MongoDB, Express, NodeJS
 
 **Server-Side Rendering:** JSX
