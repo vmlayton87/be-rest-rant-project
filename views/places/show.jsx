@@ -116,7 +116,7 @@ function Show (data) {
         <div className="container text-center">
             <div className="row">
                 <div className="col-6">
-                    <img className="img-fluid" src={data.place.pic}  alt={`a photo of ${data.place.name}`}/>
+                    <img className="img-fluid" style={{maxHeight: 50 +`vh`}} src={data.place.pic}  alt={`a photo of ${data.place.name}`}/>
                     <h5>Located in {data.place.city}, {data.place.state}</h5>
                 </div>
                 <div className="col-6 align-self-center">
